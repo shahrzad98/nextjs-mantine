@@ -1,0 +1,24 @@
+stages:
+  - lint
+  - build
+
+lint:
+  stage: lint
+  image: node:18.16.0-alpine
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - yarn install --frozen-lockfile
+    - yarn prettier --write "src/**/*.{ts,tsx}"
+    - yarn eslint:fix "src/**/*.{ts,tsx}"
+
+build:
+  stage: build
+  image: node:18.16.0-alpine
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - yarn install --frozen-lockfile
+    - yarn build
