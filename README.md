@@ -1,4 +1,4 @@
 
-## This project does not have a demo and its copyright is licensed.
+## ⚠️ This is partial project and copy right is licenced. (NO DEMO)
 
 ----  
